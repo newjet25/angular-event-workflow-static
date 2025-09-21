@@ -1,0 +1,56 @@
+<div class="container" style="margin-top: 70px;">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>WorkFlow-Name</th>
+                <th>Core Application</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let workflow of workflows">
+                <td>{{workflow.name}}</td>
+                <td>{{workflow.coreappl}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="selectWorkflow(workflow.name)">Show Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container" style="margin-top: 70px;" *ngIf="selectedWorkflow">
+        <h2>{{selectedWorkflow}}</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Triggering Event</th>
+                    <th>Producer App</th>
+                    <th>Producing time</th>
+                    <th>Message Key</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let event of events">
+                    <td>{{event.triggering_event}}</td>
+                    <td>{{event.producer_app}}</td>
+                    <td>{{event.producing_time}}</td>
+                    <td>{{event.message_key}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <mat-toolbar>
+    <span> WORKFLOW EVENT TRACKER</span>
+    <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="row">
+    <div class="col-xs-10">
+        <ul class="Workflow-List">
+            <li *ngFor="let display_list of show_list">
+                {{display_list.list_name}}
+            </li>
+        </ul>
+    </div>
+</div> -->

@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'event-dashboard-app';
+  //loadedFeature = 'workflow-list';
 }
